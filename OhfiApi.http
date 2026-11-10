@@ -1,0 +1,6 @@
+@OhfiApi_HostAddress = http://localhost:5239
+
+GET {{OhfiApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
