@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OhfiApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c33d18cc6e46b9720ba7e3faf6b1cc5518cdc5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("OhfiApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OhfiApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

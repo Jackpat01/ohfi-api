@@ -41,3 +41,4 @@
 /root/OhfiApi/obj/Debug/net10.0/OhfiApi.pdb
 /root/OhfiApi/obj/Debug/net10.0/OhfiApi.genruntimeconfig.cache
 /root/OhfiApi/obj/Debug/net10.0/ref/OhfiApi.dll
+/root/OhfiApi/obj/Debug/net10.0/OhfiApi.sourcelink.json
