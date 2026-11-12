@@ -33,7 +33,7 @@ public class AuthController : ControllerBase
 
     /// <summary>
     /// LoginToPage endpoint - ARUM-based authentication for legacy system
-    /// Validates email/password and returns ARUM user validations
+    /// Validates email/password and returns ARUM user validations + JWT token
     /// Supports multiple classifications/tokens per email
     /// </summary>
     [HttpPost("login-to-page")]
@@ -118,6 +118,29 @@ public class AuthController : ControllerBase
                 });
             }
 
+            // Generate JWT token for this authenticated user
+            // Create a synthetic user object for JWT generation
+            var jwtUser = new User
+            {
+                Id = processedUsers.First().UserID,
+                Email = request.Email,
+                Role = "User",
+                Provider = "ARUM",
+                Company = "OHFI",
+                IsActive = true
+            };
+
+            var accessToken = _jwtService.GenerateAccessToken(jwtUser);
+            var refreshToken = _jwtService.GenerateRefreshToken();
+
+            var token = new AuthToken
+            {
+                AccessToken = accessToken,
+                RefreshToken = refreshToken,
+                ExpiresIn = 3600, // 1 hour
+                TokenType = "Bearer"
+            };
+
             _logger.LogInformation("Successful LoginToPage for email: {Email} with {UserCount} ARUM users",
                 request.Email, processedUsers.Count);
 
@@ -125,7 +148,8 @@ public class AuthController : ControllerBase
             {
                 Successful = true,
                 Message = "Login successful",
-                LstARUMUsers = processedUsers
+                LstARUMUsers = processedUsers,
+                Token = token
             });
         }
         catch (Exception ex)
