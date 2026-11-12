@@ -19,6 +19,7 @@
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.23.0" />
     <PackageReference Include="Microsoft.OpenApi" Version="3.11.0" />
     <PackageReference Include="MSLC.ArumProxy" Version="3.1.0.39" />
+    <PackageReference Include="MSLC.Portal.MVC" Version="1.2.3" />
     <PackageReference Include="System.DirectoryServices" Version="11.0.0" />
     <PackageReference Include="System.DirectoryServices.Protocols" Version="11.0.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.23.0" />

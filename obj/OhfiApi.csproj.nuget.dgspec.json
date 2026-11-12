@@ -65,6 +65,10 @@
               "target": "Package",
               "version": "[3.1.0.39, )"
             },
+            "MSLC.Portal.MVC": {
+              "target": "Package",
+              "version": "[1.2.3, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[11.0.0, )"
