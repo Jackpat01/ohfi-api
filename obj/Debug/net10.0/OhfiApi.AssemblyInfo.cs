@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OhfiApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e22b9a0fe3203c7ada428a4c031d70912fe7d850")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3a13211d02ad8244ee15d0e7cc3e9a656dd9599")]
 [assembly: System.Reflection.AssemblyProductAttribute("OhfiApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OhfiApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

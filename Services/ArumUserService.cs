@@ -6,11 +6,11 @@ namespace OhfiApi.Services;
 /// Mock implementation of ARUM user service for development
 /// TODO: Replace with actual ARUM proxy integration
 /// </summary>
-public class MockArumUserService : IArumUserService
+public class ArumUserService : IArumUserService
 {
-    private readonly ILogger<MockArumUserService> _logger;
+    private readonly ILogger<ArumUserService> _logger;
 
-    public MockArumUserService(ILogger<MockArumUserService> logger)
+    public ArumUserService(ILogger<ArumUserService> logger)
     {
         _logger = logger;
     }
@@ -25,62 +25,7 @@ public class MockArumUserService : IArumUserService
         string operationName,
         string ipAddress)
     {
-        await Task.Delay(100); // Simulate async call
 
-        // Mock user database for testing
-        var mockUsers = new Dictionary<(string, string), List<ARUMUser>>
-        {
-            {
-                ("admin@example.com", "admin123"),
-                new List<ARUMUser>
-                {
-                    new ARUMUser
-                    {
-                        UserID = 1,
-                        Email = "admin@example.com",
-                        AcceptedTerms = true,
-                        Token = "ARUM_ADMIN_TOKEN",
-                        IPAddress = ipAddress
-                    }
-                }
-            },
-            {
-                ("user@example.com", "user123"),
-                new List<ARUMUser>
-                {
-                    new ARUMUser
-                    {
-                        UserID = 2,
-                        Email = "user@example.com",
-                        AcceptedTerms = null, // User needs to accept terms
-                        Token = "ARUM_USER_TOKEN",
-                        IPAddress = ipAddress
-                    }
-                }
-            },
-            {
-                ("multiclass@example.com", "pass123"),
-                new List<ARUMUser>
-                {
-                    new ARUMUser
-                    {
-                        UserID = 3,
-                        Email = "multiclass@example.com",
-                        AcceptedTerms = true,
-                        Token = "ARUM_TOKEN_CLASS1",
-                        IPAddress = ipAddress
-                    },
-                    new ARUMUser
-                    {
-                        UserID = 4,
-                        Email = "multiclass@example.com",
-                        AcceptedTerms = null,
-                        Token = "ARUM_TOKEN_CLASS2",
-                        IPAddress = ipAddress
-                    }
-                }
-            }
-        };
 
         var key = (email, password);
         if (mockUsers.TryGetValue(key, out var users))

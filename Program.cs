@@ -48,7 +48,7 @@ builder.Services.AddCors(options =>
 // Add services
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
-builder.Services.AddScoped<IArumUserService, MockArumUserService>();
+builder.Services.AddScoped<IArumUserService, ArumUserService>();
 builder.Services.AddScoped<IIPAddressService, IPAddressService>();
 
 // Add controllers

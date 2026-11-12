@@ -1,16 +1,35 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net11.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.14" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.14" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.19.2" />
-    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="11.0.0" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="11.0.0" />
+    <PackageReference Include="Microsoft.Bcl.Cryptography" Version="11.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Abstractions" Version="8.23.0" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.23.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="8.23.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="8.23.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="8.23.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.23.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="3.11.0" />
+    <PackageReference Include="MSLC.ArumProxy" Version="3.1.0.39" />
+    <PackageReference Include="System.DirectoryServices" Version="11.0.0" />
+    <PackageReference Include="System.DirectoryServices.Protocols" Version="11.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.23.0" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
+    <PackageReference Include="System.Private.ServiceModel" Version="4.10.3" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="6.0.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="10.1.0" />
+    <PackageReference Include="System.ServiceModel.NetFramingBase" Version="10.1.0" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="10.1.0" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="10.1.0" />
+    <PackageReference Include="System.ServiceModel.Security" Version="6.0.0" />
   </ItemGroup>
 
 </Project>

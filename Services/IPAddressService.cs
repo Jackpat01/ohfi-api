@@ -1,3 +1,5 @@
+using System.Net;
+
 namespace OhfiApi.Services;
 
 /// <summary>
@@ -41,8 +43,26 @@ public class IPAddressService : IIPAddressService
             }
 
             // Fall back to RemoteIpAddress
-            var remoteIp = context.Connection?.RemoteIpAddress?.ToString();
-            return !string.IsNullOrWhiteSpace(remoteIp) ? remoteIp : "Unknown";
+            var remoteIp = context.Connection.RemoteIpAddress;
+            if (remoteIp == null)
+            {
+                return string.Empty;
+            }
+
+            // Convert IPv6 loopback (::1) to IPv4 (127.0.0.1)
+            if (IPAddress.IsLoopback(remoteIp))
+            {
+                return "127.0.0.1";
+            }
+
+            // Map IPv4-mapped IPv6 addresses (e.g., ::ffff:192.168.1.1) back to standard IPv4
+            if (remoteIp.IsIPv4MappedToIPv6)
+            {
+                return remoteIp.MapToIPv4().ToString();
+            }
+
+            return remoteIp.ToString();
+
         }
         catch (Exception ex)
         {
